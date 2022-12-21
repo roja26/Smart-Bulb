@@ -1,0 +1,27 @@
+<div class="load" id="load">
+    <table>
+        <tr>
+            <h1 id="load" class="load" style="padding-top: 100px">Room Occupancy Counter:</h1>
+            <h2 id="load" class="load">Number of People : {{ people }}</h2>
+        </tr>
+        <tr>
+            <td>
+                <img src="/plot.png" alt="my plot" width="500" style="padding-right: 100px; padding-top: 100px">
+            </td>
+            <td>
+                {% block content %}
+                {% if light == '0' %}
+                    <img class="dynamic" src="{{ url_for('static',filename='bulb1.png') }}" alt="Light Intensity">
+                {% elif light == '1' %}
+                    <img class="dynamic" src="{{ url_for('static',filename='bulb2.png') }}" alt="Light Intensity">
+                {% elif light == '2' %}
+                    <img class="dynamic" src="{{ url_for('static',filename='bulb3.png') }}" alt="Light Intensity">
+                {% else %}
+                    <img class="dynamic" src="{{ url_for('static',filename='bulb4.png') }}" alt="Light Intensity">
+                {% endif %}
+                {% endblock content %}
+            </td>
+           
+        </tr style="padding-bottom: 100px">
+    </table>
+</div>
